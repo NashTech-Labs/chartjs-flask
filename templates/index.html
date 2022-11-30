@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<nav>
+    <b><a href="{{ url_for('index') }}">Dashboard</a></b>
+</nav>
+<hr>
+
+<form name="myForm" action='/index' method="POST" onsubmit="return validateForm()" method="post" required>
+
+    <!-- User Data Input -->
+    <b><label for="User">User</label></b>
+    <input placeholder="Name of Person" name="User" type="text" value="{{request.form['User']}}"></input>
+    <br></br>
+
+    <!-- RAM -->
+    <b>
+        <label for="RAM"> RAM</label>
+    </b>
+    <select name="RAM">
+        <option value=0.75>1</option>
+        <option value=1.75>1.75</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
+        <option value=3.5>3.5</option>
+        <option value=4>4</option>
+        <option value=7>7</option>
+        <option value=8>8</option>
+        <option value=14>14</option>
+        <option value=16>16</option>
+        <option value=32>32</option>
+        <option value=48>48</option>
+        <option value=56>56</option>
+        <option value=64>64</option>
+        <option value=80>80</option>
+        <option value=96>96</option>
+        <option value=112>112</option>
+        <option value=128>128</option>
+        <option value=144>144</option>
+        <option value=160>160</option>
+        <option value=176>176</option>
+        <option value=184>184</option>
+        <option value=192>192</option>
+        <option value=256>256</option>
+        <option value=320>320</option>
+        <option value=384>384</option>
+        <option value=512>512</option>
+    </select>
+
+    <!-- vCPUs -->
+    <b>
+        <label for="vCPUs">vCPUs</label>
+    </b>
+    <select name="vCPUs">
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=4>4</option>
+        <option value=8>8</option>
+        <option value=16>16</option>
+        <option value=32>32</option>
+        <option value=48>48</option>
+        <option value=64>64</option>
+        <option value=80>80</option>
+        <option value=96>96</option>
+        <option value=128>128</option>
+        <option value=192>192</option>
+    </select>
+    <br></br>
+
+    <!-- Number of Nodes -->
+    <b>
+        <label for="No of Nodes">Nodes</label>
+    </b>
+    <select name="No of Nodes">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+    </select>
+    </br><br>
+
+    
+    </br></br>
+    <button type="submit" name="submit_button" value="submit">Submit</button>
+</form>
+<hr>
+{{ heading | safe}}
+{% include 'bargraph.html' %}
+{% endblock %}
