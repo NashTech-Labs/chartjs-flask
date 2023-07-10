@@ -1,6 +1,6 @@
 # Using Flask and Chartjs
 
-This template showcase to use chartjs to create graph on given values 
+This template showcase to use chartjs to create graph on given values
 
 ## requirements
 
